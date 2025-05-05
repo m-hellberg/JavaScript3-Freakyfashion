@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { LucideAngularModule, Menu, X, Globe, Send, Shield, Smile } from 'lucide-angular';
@@ -8,6 +8,7 @@ import { LucideAngularModule, Menu, X, Globe, Send, Shield, Smile } from 'lucide
   imports: [RouterOutlet, RouterLink, FormsModule, LucideAngularModule],
   templateUrl: './public-layout.component.html',
   styleUrl: './public-layout.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PublicLayoutComponent {
   readonly MenuIcon = Menu;
