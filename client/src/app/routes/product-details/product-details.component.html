@@ -1,0 +1,21 @@
+<div class="product-details-container product-details-page" *ngIf="product">
+  <div class="image-wrapper">
+    <app-new-badge [isNew]="product.isNew"></app-new-badge>
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+    <app-wishlist-icon></app-wishlist-icon>
+  </div>
+  <div class="product-info">
+    <h1 class="product-name">{{ product.name }}</h1>
+    <p>{{ product.brand }}</p>
+    <p>{{ product.description }}</p>
+    <p class="product-price">{{ product.price }} SEK</p>
+    <button class="add-to-cart-button" (click)="addToCart()">
+      Lägg till i varukorgen
+    </button>
+  </div>
+</div>
+
+<app-carousel
+  *ngIf="relatedProducts.length"
+  [products]="relatedProducts"
+></app-carousel>

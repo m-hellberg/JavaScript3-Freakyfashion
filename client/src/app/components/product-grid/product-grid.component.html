@@ -1,0 +1,12 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <app-new-badge [isNew]="product.isNew"></app-new-badge>
+    <a [routerLink]="['/products', product.slug]">
+      <img [src]="product.image" [alt]="product.name" class="product-image" />
+      <h3 class="product-name">{{ product.name }}</h3>
+    </a>
+    <app-wishlist-icon [isFavorite]="false"></app-wishlist-icon>
+    <p class="product-brand">{{ product.brand }}</p>
+    <p class="product-price">{{ product.price }} SEK</p>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<div class="new-product">
+  <header class="new-products-header">
+    <h1>Ny produkt</h1>
+  </header>
+  <div class="form-container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Namn</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          placeholder="Ange namn"
+        />
+        <div
+          *ngIf="
+            productForm.get('name')?.touched && productForm.get('name')?.invalid
+          "
+          class="error"
+        >
+          Namnet får inte vara tomt.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Beskrivning</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          placeholder="Ange beskrivning"
+          rows="4"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="image">Bild</label>
+        <input
+          type="text"
+          id="image"
+          formControlName="image"
+          placeholder="Ange URL"
+        />
+        <div
+          *ngIf="
+            productForm.get('image')?.touched &&
+            productForm.get('image')?.invalid
+          "
+          class="error"
+        >
+          Bildlänk krävs.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="brand">Märke</label>
+        <input
+          type="text"
+          id="brand"
+          formControlName="brand"
+          placeholder="Ange märke"
+        />
+      </div>
+      <div class="form-group">
+        <label for="sku">SKU</label>
+        <input
+          type="text"
+          id="sku"
+          formControlName="sku"
+          placeholder="Ange SKU"
+        />
+        <div
+          *ngIf="
+            productForm.get('sku')?.touched &&
+            productForm.get('sku')?.hasError('required')
+          "
+          class="error"
+        >
+          SKU får inte vara tomt.
+        </div>
+        <div
+          *ngIf="
+            productForm.get('sku')?.touched &&
+            productForm.get('sku')?.hasError('pattern')
+          "
+          class="error"
+        >
+          SKU måste ha formatet XXX123.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Pris</label>
+        <input
+          type="number"
+          id="price"
+          formControlName="price"
+          placeholder="Ange pris"
+        />
+      </div>
+      <div class="form-group">
+        <label for="publicationDate">Publiceringsdatum</label>
+        <input
+          type="date"
+          id="publicationDate"
+          formControlName="publicationDate"
+        />
+      </div>
+      <button type="submit">Lägg till</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<!-- Mobilversion -->
+<div class="mobile-cart-table">
+  <div *ngFor="let item of cartItems" class="cart-box">
+    <div class="cart-box-info">
+      <div class="product-name">{{ item.quantity }} x {{ item.name }}</div>
+      <div class="price">{{ item.quantity * item.price }} SEK</div>
+    </div>
+    <div class="cart-box-info">
+      <div class="original-price">{{ item.price }} SEK</div>
+      <div class="cart-quantity" *ngIf="allowQuantityChange">
+        <button
+          (click)="updateQuantity(item.id, item.quantity - 1)"
+          [disabled]="item.quantity <= 1"
+        >
+          -
+        </button>
+        {{ item.quantity }}
+        <button (click)="updateQuantity(item.id, item.quantity + 1)">+</button>
+        <button class="remove-button-mobile" (click)="removeFromCart(item.id)">
+          🗑️
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-total-sum" *ngIf="cartItems.length > 0">
+    Totalt: {{ getTotal() }} SEK
+  </div>
+</div>
+
+<p class="empty-cart-message" *ngIf="cartItems.length === 0">
+  Ojdå, här var det tomt!
+</p>
+
+<!-- Desktopversion -->
+<table class="cart-table" *ngIf="cartItems.length > 0">
+  <thead>
+    <tr>
+      <th>Produkt</th>
+      <th>Antal</th>
+      <th>Pris</th>
+      <th>Totalt</th>
+      <th>
+        <div *ngIf="cartItems.length > 0">Totalt: {{ getTotal() }} SEK</div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cartItems">
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price }} SEK</td>
+      <td>{{ item.price * item.quantity }} SEK</td>
+      <td>
+        <button
+          (click)="updateQuantity(item.id, item.quantity - 1)"
+          [disabled]="item.quantity <= 1"
+          *ngIf="allowQuantityChange"
+        >
+          -
+        </button>
+        {{ item.quantity }}
+        <button
+          (click)="updateQuantity(item.id, item.quantity + 1)"
+          *ngIf="allowQuantityChange"
+        >
+          +
+        </button>
+        <lord-icon
+          class="remove-button-desktop"
+          src="https://cdn.lordicon.com/hwjcdycb.json"
+          trigger="hover"
+          colors="primary:#121331,secondary:#1caac7"
+          style="width: 25px; height: 25px; cursor: pointer"
+          (click)="removeFromCart(item.id)"
+          *ngIf="allowQuantityChange"
+        >
+        </lord-icon>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,264 @@
+<body>
+  <div class="top-border">
+    <lord-icon
+      src="https://cdn.lordicon.com/jxynfsur.json"
+      trigger="loop"
+      state="loop-roll"
+      colors="primary:#107c91,secondary:#ffffff"
+      style="width: 35px; height: 35px"
+    >
+    </lord-icon>
+    <span>
+      <strong>Upp till 25% rabatt på din beställning*</strong> när du handlar
+      för 2 eller fler varor. <strong>Använd kod: SPRINGDEAL</strong>
+    </span>
+  </div>
+  <header>
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/images/Logo.png" alt="Freakyfashion Logo" />
+      </a>
+      <div class="search-icons-wrapper">
+        <button class="hamburger-menu" (click)="toggleMenu()">
+          <lucide-icon [name]="MenuIcon"></lucide-icon>
+        </button>
+        <div class="search-container">
+          <form (submit)="onSearch($event)">
+            <input
+              type="text"
+              placeholder="Sök efter en produkt..."
+              [(ngModel)]="searchQuery"
+              name="q"
+            />
+            <button type="submit" class="search-button">
+              <lord-icon
+                src="https://cdn.lordicon.com/swqyihda.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#1caac7"
+                style="width: 25px; height: 25px"
+              >
+              </lord-icon>
+            </button>
+          </form>
+        </div>
+        <div class="icon-container">
+          <div class="login-container">
+            <a href="#" class="login-link">
+              Logga in
+              <lord-icon
+                src="https://cdn.lordicon.com/kdduutaw.json"
+                trigger="hover"
+                colors="primary:#000000,secondary:#1caac7"
+                style="width: 35px; height: 35px"
+              >
+              </lord-icon>
+            </a>
+          </div>
+          <button class="icon-button">
+            <lord-icon
+              src="https://cdn.lordicon.com/aydxrkfl.json"
+              trigger="hover"
+              colors="primary:#000000,secondary:#1caac7"
+              style="width: 35px; height: 35px"
+            >
+            </lord-icon>
+          </button>
+          <a routerLink="/basket" class="icon-button">
+            <lord-icon
+              src="https://cdn.lordicon.com/ggirntso.json"
+              trigger="hover"
+              colors="primary:#000000,secondary:#1caac7"
+              style="width: 35px; height: 35px"
+            >
+            </lord-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav [class.open]="menuOpen" class="mobile-menu">
+      <button class="close-menu" (click)="toggleMenu()">
+        <lucide-icon [name]="CloseIcon"></lucide-icon>
+      </button>
+      <ul>
+        <li><a href="#">Logga in</a></li>
+        <li><a href="#">Nyheter</a></li>
+        <li><a href="#">Topplistan</a></li>
+        <li><a href="#">Rea</a></li>
+        <li><a href="#">Kampanjer</a></li>
+        <li><a href="/all-products">Alla produkter</a></li>
+        <li><a href="/about-us">Om oss</a></li>
+      </ul>
+    </nav>
+    <nav class="desktop-menu">
+      <ul>
+        <li><a href="#">Nyheter</a></li>
+        <li><a href="#">Topplistan</a></li>
+        <li><a href="#">Rea</a></li>
+        <li><a href="#">Kampanjer</a></li>
+        <li><a href="/all-products">Alla produkter</a></li>
+        <li><a href="/about-us">Om oss</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <section class="info-section">
+    <div class="info-item">
+      <lucide-icon [name]="GlobeIcon" class="info-icon"></lucide-icon>
+      <span>Gratis frakt och returer</span>
+    </div>
+    <div class="info-item">
+      <lucide-icon [name]="SendIcon" class="info-icon"></lucide-icon>
+      <span>Expressfrakt</span>
+    </div>
+    <div class="info-item">
+      <lucide-icon [name]="ShieldIcon" class="info-icon"></lucide-icon>
+      <span>Säkra betalningar</span>
+    </div>
+    <div class="info-item">
+      <lucide-icon [name]="SmileIcon" class="info-icon"></lucide-icon>
+      <span>Nyheter varje dag</span>
+    </div>
+  </section>
+
+  <footer>
+    <!-- Dropdown-meny för mindre skärmar -->
+    <div class="footer-dropdown">
+      <div class="dropdown-item">
+        <button
+          class="dropdown-title"
+          (click)="toggleDropdown('customerService')"
+        >
+          Kundservice
+        </button>
+        <ul [class.open]="dropdowns.customerService">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kontakta oss</a></li>
+          <li><a href="#">Returnpolicy</a></li>
+          <li><a href="#">Leverans</a></li>
+          <li><a href="#">Betalning</a></li>
+        </ul>
+      </div>
+      <div class="dropdown-item">
+        <button class="dropdown-title" (click)="toggleDropdown('myAccount')">
+          Mitt konto
+        </button>
+        <ul [class.open]="dropdowns.myAccount">
+          <li><a href="#">Logga in</a></li>
+          <li><a href="#">Mina ordrar</a></li>
+          <li><a href="#">Sparade produkter</a></li>
+          <li><a href="#">Inställningar</a></li>
+          <li><a href="#">Adressuppgifter</a></li>
+        </ul>
+      </div>
+      <div class="dropdown-item">
+        <button class="dropdown-title" (click)="toggleDropdown('aboutUs')">
+          Om oss
+        </button>
+        <ul [class.open]="dropdowns.aboutUs">
+          <li><a href="#">Om Freakyfashion</a></li>
+          <li><a href="#">Vårt team</a></li>
+          <li><a href="#">Hållbarhet</a></li>
+          <li><a href="#">Karriär</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer för större skärmar -->
+    <div class="footer-sections">
+      <div class="footer-section">
+        <h4>Kundservice</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kontakta oss</a></li>
+          <li><a href="#">Returnpolicy</a></li>
+          <li><a href="#">Leverans</a></li>
+          <li><a href="#">Betalning</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Mitt konto</h4>
+        <ul>
+          <li><a href="#">Logga in</a></li>
+          <li><a href="#">Mina ordrar</a></li>
+          <li><a href="#">Sparade produkter</a></li>
+          <li><a href="#">Inställningar</a></li>
+          <li><a href="#">Adressuppgifter</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Om oss</h4>
+        <ul>
+          <li><a href="#">Om Freakyfashion</a></li>
+          <li><a href="#">Vårt team</a></li>
+          <li><a href="#">Hållbarhet</a></li>
+          <li><a href="#">Karriär</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact-info">
+        <h4>Kontaktformulär</h4>
+        <p>Tel: 012-345 678</p>
+        <p>E-post: info&#64;freakyfashion.se</p>
+        <p>Adress: Stockholmsgatan 10, 123 45 Stockholm</p>
+        <p>Måndag-fredag: 9-16</p>
+        <p>Lördag: 9-12</p>
+        <p>Söndag: Stängt</p>
+      </div>
+      <div class="footer-section newsletter">
+        <h4>Prenumerera på vårt nyhetsbrev</h4>
+        <form>
+          <input type="email" placeholder="E-post" />
+          <button type="submit">Skicka</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-brand-social">
+      <div class="footer-logo">
+        <img src="/images/footer-logo.png" alt="Freakyfashion Logo" />
+      </div>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook">
+          <lord-icon
+            src="https://cdn.lordicon.com/cxauoejw.json"
+            trigger="hover"
+            colors="primary:#1caac7,secondary:#ffffff"
+            style="width: 35px; height: 35px"
+          >
+          </lord-icon>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <lord-icon
+            src="https://cdn.lordicon.com/roscsuft.json"
+            trigger="hover"
+            colors="primary:#1caac7,secondary:#ffffff"
+            style="width: 35px; height: 35px"
+          >
+          </lord-icon>
+        </a>
+        <a href="#" aria-label="Pinterest">
+          <lord-icon
+            src="https://cdn.lordicon.com/pvkhkhmh.json"
+            trigger="hover"
+            colors="primary:#1caac7,secondary:#ffffff"
+            style="width: 35px; height: 35px"
+          >
+          </lord-icon>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <lord-icon
+            src="https://cdn.lordicon.com/gvdkosit.json"
+            trigger="hover"
+            colors="primary:#1caac7,secondary:#ffffff"
+            style="width: 35px; height: 35px"
+          >
+          </lord-icon>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>

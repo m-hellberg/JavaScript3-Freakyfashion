@@ -1,0 +1,18 @@
+<div class="heart-icon" (click)="toggleFavorite()">
+  <lord-icon
+    *ngIf="!isFavorite"
+    src="https://cdn.lordicon.com/xyboiuok.json"
+    trigger="morph"
+    state="morph-heart"
+    style="width: 40px; height: 40px"
+  >
+  </lord-icon>
+  <lord-icon
+    *ngIf="isFavorite"
+    src="https://cdn.lordicon.com/ulnswmkk.json"
+    trigger="hover"
+    colors="primary:#000000"
+    style="width: 40px; height: 40px"
+  >
+  </lord-icon>
+</div>

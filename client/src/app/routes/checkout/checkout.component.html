@@ -1,0 +1,52 @@
+<h1 class="checkout-title">Kassan</h1>
+<app-cart-table [allowQuantityChange]="false"></app-cart-table>
+
+<div class="checkout-actions">
+  <button class="edit-cart-button" routerLink="/basket">
+    Ändra varukorgen
+  </button>
+</div>
+
+<div class="customer-details">
+  <h2>Kunduppgifter</h2>
+  <form>
+    <div class="form-group-row">
+      <div class="form-group">
+        <label for="firstName">Förnamn</label>
+        <input type="text" id="firstName" name="firstName" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Efternamn</label>
+        <input type="text" id="lastName" name="lastName" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">E-post</label>
+      <input type="email" id="email" name="email" />
+    </div>
+
+    <fieldset class="address-section">
+      <legend>Adress</legend>
+      <div class="form-group">
+        <label for="street">Gata</label>
+        <input type="text" id="street" name="street" />
+      </div>
+      <div class="form-group">
+        <label for="postalCode">Postnummer</label>
+        <input type="text" id="postalCode" name="postalCode" />
+      </div>
+      <div class="form-group">
+        <label for="city">Stad</label>
+        <input type="text" id="city" name="city" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<div class="newsletter-and-purchase">
+  <div class="newsletter">
+    <input type="checkbox" id="newsletter" name="newsletter" />
+    <label for="newsletter">Jag vill ta emot nyhetsbrev</label>
+  </div>
+  <button class="purchase-button">Köp</button>
+</div>

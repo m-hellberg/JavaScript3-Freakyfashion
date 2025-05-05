@@ -1,0 +1,20 @@
+<header class="admin-header">
+  <h1>Administration</h1>
+</header>
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <nav>
+      <ul class="admin-menu">
+        <li><a routerLink="/admin/dashboard">Dashboard</a></li>
+        <li><a routerLink="/admin/products">Produkter</a></li>
+        <li><a routerLink="/admin/order-management">Orderhantering</a></li>
+        <li><a href="/admin">Analysdata</a></li>
+        <li><a href="/admin">Inställningar</a></li>
+        <li><a href="/admin">Support</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

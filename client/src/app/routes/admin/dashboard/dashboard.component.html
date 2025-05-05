@@ -1,0 +1,128 @@
+<div class="dashboard">
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <p>Välkommen tillbaka, Admin!</p>
+  </header>
+  <section class="dashboard-welcome">
+    <h2>Översikt</h2>
+    <p>
+      Här kan du se en sammanfattning av månadens försäljning, produkter och
+      kunder.
+    </p>
+  </section>
+  <section class="stats">
+    <div class="stat-card">
+      <h3>Månadens försäljning</h3>
+      <p>765 000 SEK</p>
+    </div>
+    <div class="stat-card">
+      <h3>Antal produkter</h3>
+      <p>764</p>
+    </div>
+    <div class="stat-card">
+      <h3>Aktiva kunder</h3>
+      <p>5 412</p>
+    </div>
+    <div class="stat-card">
+      <h3>Order i kö</h3>
+      <p>36</p>
+    </div>
+  </section>
+
+  <!-- Senaste order -->
+  <section class="recent-orders">
+    <h2>Senaste order</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Order-ID</th>
+          <th>Kund</th>
+          <th>Datum</th>
+          <th>Status</th>
+          <th>Belopp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#12345</td>
+          <td>Gunilla Persson</td>
+          <td>2025-04-17</td>
+          <td><span class="status pending">I kö</span></td>
+          <td>1 196 SEK</td>
+        </tr>
+        <tr>
+          <td>#12344</td>
+          <td>Sarah Smith</td>
+          <td>2025-04-17</td>
+          <td><span class="status pending">I kö</span></td>
+          <td>798 SEK</td>
+        </tr>
+        <tr>
+          <td>#12343</td>
+          <td>Anna Jensen</td>
+          <td>2025-04-17</td>
+          <td><span class="status cancelled">Avbruten</span></td>
+          <td>0 SEK</td>
+        </tr>
+        <tr>
+          <td>#12342</td>
+          <td>Karin Olsson</td>
+          <td>2025-04-17</td>
+          <td><span class="status pending">I kö</span></td>
+          <td>3 498 SEK</td>
+        </tr>
+        <tr>
+          <td>#12341</td>
+          <td>Joseph Brown</td>
+          <td>2025-04-16</td>
+          <td><span class="status completed">Slutförd</span></td>
+          <td>1 297 SEK</td>
+        </tr>
+        <tr>
+          <td>#12340</td>
+          <td>Eva Fredriksson</td>
+          <td>2025-04-16</td>
+          <td><span class="status completed">Slutförd</span></td>
+          <td>599 SEK</td>
+        </tr>
+        <tr>
+          <td>#12339</td>
+          <td>Emelie Lang</td>
+          <td>2025-04-16</td>
+          <td><span class="status completed">Slutförd</span></td>
+          <td>3 092 SEK</td>
+        </tr>
+        <tr>
+          <td>#12338</td>
+          <td>Kim Tavari</td>
+          <td>2025-04-16</td>
+          <td><span class="status cancelled">Avbruten</span></td>
+          <td>0 SEK</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Genvägar -->
+  <section class="shortcuts">
+    <h2>Genvägar</h2>
+    <div class="shortcut-cards">
+      <a routerLink="/admin/products" class="shortcut-card">
+        <h3>Hantera produkter</h3>
+        <p>Visa och redigera alla produkter</p>
+      </a>
+      <a routerLink="/admin/products/new" class="shortcut-card">
+        <h3>Lägg till ny produkt</h3>
+        <p>Skapa en ny produkt</p>
+      </a>
+      <a href="/admin/order-management" class="shortcut-card">
+        <h3>Orderhantering</h3>
+        <p>Hantera alla ordrar</p>
+      </a>
+      <a href="/admin" class="shortcut-card">
+        <h3>Analysdata</h3>
+        <p>Visa försäljningsstatistik</p>
+      </a>
+    </div>
+  </section>
+</div>

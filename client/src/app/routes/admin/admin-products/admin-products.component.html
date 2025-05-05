@@ -1,0 +1,33 @@
+<div class="admin-products">
+  <header class="admin-products-header">
+    <h1>Produkter</h1>
+    <a class="new-product-button" routerLink="/admin/products/new"
+      >Ny produkt</a
+    >
+  </header>
+
+  <main class="main">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Namn</th>
+          <th>SKU</th>
+          <th>Pris</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.sku }}</td>
+          <td>{{ product.price }} kr</td>
+          <td>
+            <button (click)="deleteProduct(product.id)" class="delete-btn">
+              🗑️
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>

@@ -1,0 +1,17 @@
+<h2 class="carousel-heading">Andra tittade även på</h2>
+
+<div class="carousel-container">
+  <button (click)="goToPrevious()">‹</button>
+
+  <div class="product-slide">
+    <div class="product-card" *ngFor="let product of currentSlide">
+      <a [routerLink]="['/products', product.slug]">
+        <img [src]="product.image" alt="{{ product.name }}" />
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }} SEK</p>
+      </a>
+    </div>
+  </div>
+
+  <button (click)="goToNext()">›</button>
+</div>

@@ -1,0 +1,10 @@
+<h1 class="basket-title">Din varukorg</h1>
+<app-cart-table></app-cart-table>
+<div
+  class="to-checkout-button-container"
+  *ngIf="(cartService.cartItems$ | async)?.length"
+>
+  <button class="checkout-button" [routerLink]="['/checkout']">
+    Till kassan
+  </button>
+</div>

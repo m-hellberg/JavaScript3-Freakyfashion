@@ -1,0 +1,71 @@
+<div class="hero">
+  <div class="hero-banner">
+    <h1>VÅRERBJUDANDE!</h1>
+    <p>UPP TILL</p>
+    <p class="hero-discount">25%</p>
+    <p>på din beställning*</p>
+    <div class="hero-code">
+      <span>Använd kod: <strong>SPRINGDEAL</strong></span>
+    </div>
+    <p class="hero-code-note">*Gäller när du handlar 2 eller fler varor</p>
+  </div>
+
+  <div class="hero-video">
+    <video #heroVideo autoplay muted loop playsinline>
+      <source src="/videos/hero-video.mp4" type="video/mp4" />
+      Din webbläsare stödjer inte videouppspelning.
+    </video>
+    <div class="video-controls">
+      <button class="control-btn" (click)="togglePlayPause(heroVideo)">
+        {{ isPlaying ? "⏸" : "▶" }}
+      </button>
+      <button class="control-btn" (click)="toggleMute(heroVideo)">
+        {{ isMuted ? "🔇" : "🔊" }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Spots-sektionen -->
+<div class="spots">
+  <h2>Upptäck våra nya kollektioner</h2>
+  <div class="spots-container">
+    <div class="spot">
+      <div class="spot-content">
+        <p class="spot-subtitle">
+          Våga blomma ut i vårens mest oväntade färger
+        </p>
+        <h3 class="spot-title">Electric Bloom</h3>
+        <button class="spot-button">Inspireras här</button>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-content">
+        <p class="spot-subtitle">Fartfylld nostalgi från 80-talet</p>
+        <h3 class="spot-title">Roller Soul</h3>
+        <button class="spot-button">Inspireras här</button>
+      </div>
+    </div>
+    <div class="spot">
+      <div class="spot-content">
+        <p class="spot-subtitle">Sött, stökigt och helt utan regler</p>
+        <h3 class="spot-title">Chaos & Candy</h3>
+        <button class="spot-button">Inspireras här</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-product-grid [products]="products"></app-product-grid> -->
+<!-- <app-product-grid [products]="products" [callback]="myFunction" /> -->
+
+<!-- Populära produkter -->
+<div class="popular-products">
+  <h2>Populära produkter just nu</h2>
+  <app-product-grid [products]="popularProducts"></app-product-grid>
+  <div class="see-all-button-container">
+    <button class="see-all-button" [routerLink]="['/all-products']">
+      Se alla produkter
+    </button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.heart-icon {
+  position: absolute;
+  bottom: 110px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+:host-context(.product-details-page) .heart-icon {
+  bottom: 10px;
+}

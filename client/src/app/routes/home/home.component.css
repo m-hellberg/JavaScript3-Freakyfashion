@@ -1,0 +1,245 @@
+/* Hero-sektionen */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+/* Första hero-sektionen */
+.hero-banner {
+  background-color: #1caac7;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-banner h1 {
+  font-size: clamp(1.8em, 2.5vw, 3em);
+  margin-bottom: 2rem;
+  margin-top: 0.1rem;
+}
+
+.hero-banner p {
+  margin: 0;
+  font-size: clamp(1.3em, 2vw, 1.8em);
+  line-height: 1;
+}
+
+.hero-banner .hero-discount {
+  font-size: clamp(7.5rem, 8vw, 12rem);
+  font-weight: bold;
+}
+
+.hero-banner .hero-code {
+  background-color: #fff;
+  color: #333;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-banner .hero-code-note {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Andra sektionen: video */
+.hero-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border: 1px solid #ffffff;
+}
+
+.hero-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-btn {
+  background-color: rgba(0, 0, 0, 0.295);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Spots-sektionen */
+.spot:nth-child(1) {
+  background-image: url("/images/spots-1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.spot:nth-child(2) {
+  background-image: url("/images/spots-2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.spot:nth-child(3) {
+  background-image: url("/images/spots-3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.spots {
+  text-align: center;
+}
+
+.spots h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.spots-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spot {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.spot-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  margin-top: 5rem;
+  white-space: nowrap;
+}
+
+.spot-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: -2rem;
+  text-transform: uppercase;
+}
+
+.spot-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.spot-button {
+  background-color: rgba(255, 255, 255, 0.842);
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 4rem;
+  font-weight: bold;
+}
+
+/* Populära produkter-sektionen */
+.popular-products h2 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.see-all-button-container {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+.see-all-button {
+  color: #333;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 9px;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.see-all-button:hover {
+  color: #333333ab;
+}
+
+@media (min-width: 640px) {
+  /* Spots-sektionen */
+  .spot-content {
+    margin-top: 7rem;
+  }
+
+  .spot-subtitle {
+    font-size: 1rem;
+  }
+
+  .spot-title {
+    font-size: 2.5rem;
+  }
+
+  .spot-button {
+    margin-top: 11rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Spots-sektionen */
+  .spots-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .spot {
+    width: 30%;
+    padding-top: 30%;
+  }
+
+  .spot-content {
+    margin-top: 3rem;
+  }
+
+  .spot-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .spot-button {
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.842);
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .spot-button:hover {
+    background-color: rgba(255, 255, 255, 0.726);
+  }
+}

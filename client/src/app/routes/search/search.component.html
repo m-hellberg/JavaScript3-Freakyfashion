@@ -1,0 +1,13 @@
+<div class="search-results">
+  <h2 *ngIf="!isLoading">
+    Hittade {{ products.length }} produkt{{ products.length === 1 ? "" : "er" }}
+  </h2>
+  <p *ngIf="isLoading">Laddar sökresultat...</p>
+  <app-product-grid
+    *ngIf="!isLoading && products.length > 0"
+    [products]="products"
+  ></app-product-grid>
+  <p *ngIf="!isLoading && products.length === 0">
+    Tyvärr kunde vi inte hitta det du sökte på. Testa sök på något annat!
+  </p>
+</div>

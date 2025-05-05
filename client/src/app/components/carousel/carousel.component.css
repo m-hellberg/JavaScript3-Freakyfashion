@@ -1,0 +1,74 @@
+.carousel-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 1rem;
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 300%;
+}
+
+.product-card {
+  padding: 0.3rem;
+  text-align: center;
+  flex: 1 0 33.33%;
+  max-width: 33.33%;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.carousel-container button {
+  background-color: #1caac759;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+
+.carousel-container button:hover {
+  background-color: #1597b0;
+}
+
+.carousel-container button:first-of-type {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.carousel-container button:last-of-type {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 639px) {
+  .carousel-heading,
+  .carousel-container {
+    display: none;
+  }
+}

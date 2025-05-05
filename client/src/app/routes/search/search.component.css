@@ -1,0 +1,8 @@
+.search-results {
+  padding: 1rem;
+}
+
+.search-results h2,
+.search-results p {
+  text-align: center;
+}
