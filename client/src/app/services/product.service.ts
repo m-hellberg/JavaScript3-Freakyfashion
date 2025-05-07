@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Product } from '../types/Product';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -28,6 +28,4 @@ export class ProductService {
   AddProduct(product: Product): Observable<Product> {
     return this.http.post<Product>('/api/products', product);
   }
-
- // constructor() { }
 }

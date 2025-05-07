@@ -1,11 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { Product } from '../../../types/Product';
-// import { RouterModule } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-// import { NewProductComponent } from '../new-product/new-product.component';
 
 @Component({
   selector: 'app-admin-products',
@@ -32,12 +30,6 @@ export class AdminProductsComponent {
         this.products = this.products.filter(product => product.id !== id);
       });
     }
-  }
-
-  addProduct(Products: Product) {
-    //this.productService.AddProduct(Products).subscribe((data) => {
-    //  this.products.push(data);
-    //});
   }
 
   myFunction(message: string) {

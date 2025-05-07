@@ -99,16 +99,13 @@ app.post("/api/products", (req, res) => {
 
   const { description, brand, price, publicationDate } = req.body;
 
-  // Skapa ett slumpmässigt värde för purchasesThisMonth mellan 50 och 500
   const purchasesThisMonth = Math.floor(Math.random() * (500 - 50 + 1)) + 50;
 
-  // Lägg till i databasen
   const stmt = db.prepare(`
     INSERT INTO products (name, description, image, brand, sku, price, publicationDate, slug, purchasesThisMonth, isPopular)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
 
-  // Använd purchasesThisMonth och isPopular kommer att sättas av din trigger
   const result = stmt.run(name, description, image, brand, sku, price, publicationDate, slug, purchasesThisMonth, 0);
 
   res.status(201).json({
@@ -116,18 +113,6 @@ app.post("/api/products", (req, res) => {
     id: result.lastInsertRowid
   });
 });
-
-//app.get('/api/products', (req, res) => {
-
-  //const { query? } = req.query;
-
-  //if (name) {
-      //const filteredProducts = products.filter(product => product.name.toLowerCase().includes(name.toLowerCase()));
-      //return res.json(filteredProducts);
-  //}
-
-  //res.json(products);
-//});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

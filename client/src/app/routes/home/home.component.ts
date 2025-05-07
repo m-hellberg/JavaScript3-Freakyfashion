@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { ProductGridComponent } from '../../components/product-grid/product-grid.component';
 import { Product } from '../../types/Product';
-import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 
@@ -14,7 +13,6 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  // private http = inject(HttpClient);
   private productService = inject(ProductService);
   private route = inject(ActivatedRoute);
 
@@ -37,13 +35,6 @@ export class HomeComponent {
   myFunction(message: string) {
     console.log(message);
   }
-
-
-  //ngOnInit() {
-    //this.http.get<Product[]>("/api/products").subscribe(products => {
-      //this.products = products;
-    //});
-  //}
 
   ngAfterViewInit(): void {
     if (this.heroVideo) {
